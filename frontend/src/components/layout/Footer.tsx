@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { Lock } from "lucide-react";
+
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -18,24 +21,33 @@ export function Footer() {
           </h4>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
-              <a href="/" className="hover:text-primary-light">
+              <Link to="/" className="hover:text-primary-light transition-colors">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services" className="hover:text-primary-light">
+              <Link to="/services" className="hover:text-primary-light transition-colors">
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="hover:text-primary-light">
+              <Link to="/about" className="hover:text-primary-light transition-colors">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-primary-light">
+              <Link to="/contact" className="hover:text-primary-light transition-colors">
                 Contact Us
-              </a>
+              </Link>
+            </li>
+            <li className="pt-2 border-t border-white/10">
+              <Link
+                to="/admin/login"
+                className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-primary-light transition-colors"
+              >
+                <Lock className="h-3 w-3" />
+                Admin Portal
+              </Link>
             </li>
           </ul>
         </div>
@@ -95,11 +107,13 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-[#1A1A1A] py-4 text-center text-xs text-gray-400">
-        © {year} Sovilo&apos;s Aesthetics. All Rights Reserved. | Designed &amp; Developed by Your
-        Name
+      <div className="bg-[#1A1A1A] py-4 text-center text-xs text-gray-400 flex items-center justify-center gap-4">
+        <span>© {year} Sovilo&apos;s Aesthetics. All Rights Reserved.</span>
+        <span className="text-gray-600">|</span>
+        <Link to="/admin/login" className="text-gray-500 hover:text-gray-300">
+          Staff Login
+        </Link>
       </div>
     </footer>
   );
 }
-

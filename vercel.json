@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "rewrites": [
+    { "source": "/api/health", "destination": "/frontend/api/health.js" },
+    { "source": "/api/contact", "destination": "/frontend/api/contact.js" },
+    { "source": "/api/services", "destination": "/frontend/api/services.js" },
+    { "source": "/api/reviews", "destination": "/frontend/api/reviews.js" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
